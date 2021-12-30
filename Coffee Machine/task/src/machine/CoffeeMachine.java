@@ -86,8 +86,14 @@ public class CoffeeMachine {
                     String select = s.next();
                     if (select.equals("back")) continue;
                     else {
-                        if (!error) zapasy(Integer.parseInt(select));
-                        else continue;
+                        if (!error) {
+                            zapasy(Integer.parseInt(select));
+                            error = false;
+                        }
+                        else {
+                            error = false;
+                            continue;
+                        }
                         select(Integer.parseInt(select));
                     }
                     break;
